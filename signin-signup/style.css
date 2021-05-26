@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+#particles-js {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+
+body {
+    background-image: url("https://i.ibb.co/JBKjNfV/homebg.png");
+    background-color: #DBE9F4;
+    display: flex;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    background-size: 100%;
+    text-align: center;
+}
+
+.content {
+    background: rgba( 250, 250, 250, 0.90 );
+box-shadow: 5px 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20.0px );
+-webkit-backdrop-filter: blur( 20.0px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px;
+  z-index: 100;
+
+  
+
+width: 85%;
+height: 99%;
+
+}
+
+nav {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 80px;
+    cursor: pointer;
+  }
+
+  .logoi {
+      width: 3.5em;
+      margin-right: 1%;
+  }
+  
+  .home,.create {
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+
+    transition-duration: 0.5s;
+
+    margin:10px;
+    float: left;
+  }
+
+ .home:hover, .create:hover{
+      transform: scale(1.1);
+      border-color: white;
+      color: black;
+      background-image: linear-gradient(to top, #e2b6ed, #f7a6cc, #fd9ca4, #f19b7c, #d4a05c);
+  }
+
+  .left-section {
+    transform: translateY(100%);
+
+    top: -67%;
+    bottom: 0;
+    right: 0;
+    left: -10% ;   
+    padding: 9%;
+
+    display: inline-block;
+  position: relative;
+
+background: rgba( 126, 0, 236, 0.40 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  
+
+  
+
+  .right-section {
+    top: 10%;
+    bottom: 0;
+    right: 0;
+    left: 10%;   
+    padding: 8%;
+    padding-left: 9%;
+    padding-right: 9%;
+    display: inline-block;
+  position: relative;
+   
+background: rgba( 247, 33, 25, 0.35 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7.5px );
+-webkit-backdrop-filter: blur( 7.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+
+
+  #togglePassword {
+    cursor: pointer;
+}
+
+.input-group {
+    max-width: 350px;
+    width: 100%;
+    background: #f0f0f0;
+    margin: 10px 0;
+    height: 50px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+.input-group i {
+    text-align: center;
+    line-height: 50px;
+    color: #acacac;
+    transition: 0.5s;
+    font-size: 15px;
+}
+.input-group input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    transition: 0.3s;
+}
+
+
+.register, .sign {
+    width: 100%;
+    height: 45px;
+    max-width: 300px;
+    background: #fff;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #f26200;
+    cursor: pointer;
+    font-weight: 900;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.sign{
+    color:darkorchid;
+}
+
+.register, .sign i {
+    font-size: 12px;
+    margin-left: 4px;
+}
+.register:hover , .sign:hover {
+    background: none;
+    color: #fff;
+}
+
+/* Responsive */
+
+@media (max-width:600px) {
+  body {
+      font-size: 5px;
+      background-size: 800%;
+      overflow-y: scroll; 
+      -webkit-overflow-scrolling: touch;
+      
+  }
+  .contaniner {
+      flex-direction: column;
+      position: relative;
+    
+  }
+
+  .left-section {
+
+    top: -35%;
+    bottom: 0;
+    right: 0;
+    left: 2% ;   
+    padding: 2em;
+
+  }
+
+  .right-section {
+    top: 1%;
+    bottom: 0;
+    right: 0;
+    left: 2%;   
+    padding: 3%;
+   
+  }
+
+  .heading {
+    font-size: 3em;
+    letter-spacing: 2px;
+    margin-top: 0%;
+  }
+
+  
+ .logo, .home, .create {
+  font-size: 2em;
+ }
+
+  
+.register, .sign {
+  width: 100%;
+  height: 45px;
+  max-width: 300px;
+  background: #fff;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  color: #f26200;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.3s;
+  margin-top: 10px;
+  font-size: 2em;
+}
+  
+ 
+}
+
+@media (min-width:600px) and (max-width:768px) {
+  body {
+      font-size: 6px;
+      overflow-y: auto;
+      background-size: 180%;
+  }
+  .contaniner {
+      flex-direction: column;
+      justify-content: space-around;
+  }
+    
+  .left-section {
+
+    top: -57%;
+    bottom: 0;
+    right: 0;
+    left: 2% ;   
+    padding: 3em;
+
+  }
+
+  .right-section {
+    top: 1%;
+    bottom: 0;
+    right: 0;
+    left: 5%;   
+    padding: 3%;
+   
+  }
+
+  .heading {
+    font-size: 2em;
+    letter-spacing: 2px;
+    margin-top: 0%;
+  }
+
+  
+ .logo, .home, .create {
+  font-size: 2em;
+ }
+
+  
+.register, .sign {
+  width: 100%;
+  height: 45px;
+  max-width: 300px;
+  background: #fff;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  color: #f26200;
+  cursor: pointer;
+  font-weight: 900;
+  transition: 0.3s;
+  margin-top: 10px;
+  font-size: 2em;
+}
+  
+
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+  body {
+      font-size: 7px;
+      overflow-y: auto;
+      background-size: 150%;
+  }
+
+  .contaniner {
+    flex-direction: column;
+    justify-content: space-around;
+}
+  
+.left-section {
+
+  top: -57%;
+  bottom: 0;
+  right: 0;
+  left: -10% ;   
+  padding: 5em;
+
+}
+
+.right-section {
+  top: 1%;
+  bottom: 0;
+  right: 0;
+  left: 10%;   
+  padding: 5em;
+ 
+}
+
+.heading {
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin-top: 0%;
+}
+
+
+.logo, .home, .create {
+font-size: 2em;
+}
+
+
+.register, .sign {
+width: 100%;
+height: 45px;
+max-width: 300px;
+background: #fff;
+border: 2px solid #fff;
+border-radius: 25px;
+color: #f26200;
+cursor: pointer;
+font-weight: 900;
+transition: 0.3s;
+margin-top: 10px;
+font-size: 2em;
+}
+
+}
+
+@media (min-width:1025px) and (max-width:1200px) {
+  body {
+      font-size: 9px;
+      background-size: 150%;
+  }
+  
+}
