@@ -50,7 +50,7 @@ signInForm.addEventListener("click", (event) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.message = "User Signed in") {
+      if (data.token) {
         localStorage.setItem("jwt", data.token);
         Swal.fire({
           icon: 'success',
