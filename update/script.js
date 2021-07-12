@@ -26,7 +26,7 @@ updateNoteButton.addEventListener("click", () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
-          location.href = "/frontend/dashboard/index.html";
+          location.href = "../update";
         }
       })
       .catch((err) => {

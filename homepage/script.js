@@ -8,11 +8,11 @@ window.addEventListener("load", () => {
   const token = localStorage.getItem("jwt");
 
   if (token) {
-    location.href = "/frontend/dashboard/index.html";
+    location.href = "/";
   }
 });
 
 signInSignUpButton.addEventListener("click", () => {
   event.preventDefault();
-  location.href = "/frontend/signin-signup/index.html";
+  location.href = "/signin-signup/index.html";
 });
