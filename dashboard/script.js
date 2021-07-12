@@ -10,7 +10,7 @@ const token = localStorage.getItem("jwt");
 
 logout.addEventListener("click", () => {
   localStorage.removeItem("jwt");
-  location.href = "../homepage";
+  location.href = "https://bluenote.netlify.app/";
 });
 
 let cardData = [];
