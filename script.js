@@ -14,5 +14,5 @@ window.addEventListener("load", () => {
 
 signInSignUpButton.addEventListener("click", () => {
   event.preventDefault();
-  location.href = "/signin-signup/index.html";
+  location.href = "/signin-signup";
 });
