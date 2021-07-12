@@ -6,7 +6,7 @@ particlesJS.load("particles-js", "particles.json");
 
 document.querySelector(".log").addEventListener("click", () => {
   localStorage.removeItem("jwt");
-  location.href = "../homepage"
+  location.href = "https://bluenote.netlify.app/"
 })
 
 const createNoteInput = document.querySelector(".input");
