@@ -8,6 +8,7 @@
     <meta name="HandheldFriendly" content="true">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="style.css">
     <title>Note-Maker</title>
 </head>
@@ -18,18 +19,19 @@
             <nav>
                 <img src="https://i.ibb.co/C78p1Kq/Blue-note.png" alt="logo" srcset="" class="logoi">
                 <div class="logo">bluenote</div>
-                <div class="sign-in-sign-up"> <a href="https://bluenote.netlify.app/">Home</a></div>
-                <div class="log"> <a href="https://blueget.netlify.app/">Log out</a></div>
+                <div class="sign-in-sign-up"> <a href="/frontend/homepage/index.html">Home</a></div>
+                <div class="log"> <a href="/frontend/signin-signup/">Log out</a></div>
             </nav>
         <div class="create">
             <h2 class="heading">Create Note</h2><br>
-            <textarea id="w3review" name="w3review" rows="1" cols="50" placeholder="Heading" class="inputhead"></textarea><br>
-            <textarea id="w3review" name="w3review" rows="23" cols="50" placeholder="Type your note here" class="input"></textarea><br>
+            <textarea  rows="1" cols="50" placeholder="Heading" class="inputhead"></textarea><br>
+            <textarea  rows="23" cols="50" placeholder="Type your note here" class="input"></textarea><br>
             <button class="btn">Create</button>
         </div>
         </div>
         <div id="particles-js"></div>
         <script src="particles.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="script.js"></script>
     </main>
 </body>

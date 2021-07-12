@@ -8,6 +8,7 @@
     <meta name="HandheldFriendly" content="true">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="style.css">
     <title>Note-Maker</title>
 </head>
@@ -18,11 +19,10 @@
             <nav>
                 <img src="https://i.ibb.co/C78p1Kq/Blue-note.png" alt="logo" srcset="" class="logoi">
                 <div class="logo">bluenote</div>
-                <div class="home"> <a href="https://bluenote.netlify.app/" target="_blank"> Home </a></div>
-                <div class="create"><a href="https://bluecreate.netlify.app/">Create</div></a>
+                <div class="home"> <a href="/frontend/homepage/index.html"> Home </a></div>
             </nav>
             <div class="left-section">
-                <form action="" class="in">
+                <div class="in">
                     <h2 class="heading">
                         Sign-In
                     </h2>
@@ -35,12 +35,12 @@
                     <input type="password" name="" id="password" class="pass" placeholder="Enter Your Password here"><br>
                     </div>
                   
-                    <button class="sign">  <a href="https://bluedashboard.netlify.app">Sign-In</a></button>
+                    <button class="sign" type="submit"> Sign-In</button>
             
-                </form>
+                </div>
             </div>
             <div class="right-section">
-                <form action="" class="register2">
+                <div class="register2">
                     <h2 class="heading">
                         Sign-Up
                     </h2>
@@ -59,13 +59,14 @@
                         <i class="far fa-eye" id="togglePassword3"></i>
                     <input type="password" name="" id="pass3" class="passin2" placeholder="Confirm Password here"><br>
                     </div>
-                    <button class="register">Sign-Up</button>
-                </form>
+                    <button class="register" type="submit">Sign-Up</button>
+                </div>
             </div>
         </div>
 
         <div id="particles-js"></div>
         <script src="https://kit.fontawesome.com/4077c6ef6a.js" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="particles.js"></script>
         <script src="script.js"></script>
     </main>

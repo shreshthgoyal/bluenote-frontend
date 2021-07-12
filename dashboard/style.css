@@ -30,20 +30,16 @@ backdrop-filter: blur( 20.0px );
 -webkit-backdrop-filter: blur( 20.0px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
-
-margin-left: auto;
-margin-right: auto;
-
-width: 85%;
+width: 100vw;
 height: 10%;
 
 }
 
+
 nav {
     height: 10vh;
-    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 0 80px;
     cursor: pointer;

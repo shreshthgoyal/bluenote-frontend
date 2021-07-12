@@ -2,38 +2,96 @@ particlesJS.load("particles-js", "particles.json");
 
 
 const cardContainer = document.querySelector(".card-container");
+const logout = document.querySelector(".log");
+const createNoteButton = document.querySelector(".sign-in-sign-up");
+const apiUrl = "https://rocky-anchorage-64506.herokuapp.com";
 
-const cardData = [
-  {
-    heading: "heading1",
-    content:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure sequi culpa officiis quae, quod aperiam temporibus pariatur, est laboriosam corporis similique laudantium repellat quas expedita possimus tempora provident doloremque illum exercitationem, architecto deserunt. Fuga repellat incidunt assumenda dolore cumque nihil facilis repudiandae? Explicabo aspernatur earum nostrum amet aperiam, ab distinctio!",
-    id: 1,
-  },
-  { heading: "heading2", content: "dhjalk;gjasjfasfs", id: 2 },
-  { heading: "heading3", content: "dhjalk;gjasjfasfs", id: 3 },
-  { heading: "heading4", content: "dhjalk;gjasjfasfs", id: 4 },
-  { heading: "heading5", content: "dhjalk;gjasjfasfs", id: 5 },
-  { heading: "heading6", content: "dhjalk;gjasjfasfs", id: 6 },
-  { heading: "heading7", content: "dhjalk;gjasjfasfs", id: 7 },
-];
+const token = localStorage.getItem("jwt");
+
+logout.addEventListener("click", () => {
+  localStorage.removeItem("jwt");
+  location.href = "../homepage";
+});
+
+let cardData = [];
+
+createNoteButton.addEventListener("click", () => {
+  location.href = "/frontend/create/index.html";
+});
+
 
 const createNotes = (array) => {
+  if(array.length > 0)
+  {cardContainer.innerHTML = "";}
+    
   array.forEach((cardObj) => {
-    const { heading, content, id } = cardObj;
+    const { heading, content, noteId } = cardObj;
 
     const card = document.createElement("div");
     card.classList.add("card");
-    card.id = id;
+    card.id = noteId;
 
-    const insideHtml = `<div class="card-header"><div class="card-heading">${heading}</div><a href="https://blueupdate.netlify.app?noteId=${id}"><div class="edit-note"><i class="far fa-edit"></i></div></a></div><div class="card-content">${content}</div>`;
+
+    const insideHtml = `<div class="card-header"><div class="card-heading">${heading}</div><a href="../update/?id=${noteId}"><div class="edit-note"><i class="far fa-edit"></i></a></div></div><div class="card-content">${content}</div>`;
 
     card.innerHTML = insideHtml;
 
     cardContainer.appendChild(card);
+
   });
 };
 
 createNotes(cardData);
 
-const body = document.querySelector("body");
+window.addEventListener("load", () => {
+  if (token) {
+    fetch(`${apiUrl}/note/getall`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `${localStorage.getItem("jwt")}`,
+        },
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        cardData = data.data;
+        if(data.data.length === 0) {
+          Swal.fire({
+            title: 'Create a blue-note!!',
+            width: 600,
+            padding: '3em',
+            confirmButtonText: 'Create',
+            backdrop: `
+              rgba(0,0,123,0.4)
+              url("https://media2.giphy.com/media/3oFzmeVbeXIfBUl5sI/giphy.gif")
+              left top
+              no-repeat
+            `
+          })
+          .then((result)=> {
+            if(result.isConfirmed)
+            {
+              location.href = "../create"
+            }
+          })
+        }
+        createNotes(cardData);
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Warning!',
+          text: `Error Occured, Try Reloading the page or Sign-In again!`,
+        })
+      })
+  }
+
+  if (!token) {
+    location.href = "../../index.html";
+  }
+})
+
+
+
+
